@@ -540,5 +540,34 @@ function handleAuthSubmit(event, type) {
     closeAuthModal();
 }
 </script>
+        <script type="module">
+  // Firebase SDKs Import
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  // তোমার ফায়ারবেস কনফিগারেশন
+  const firebaseConfig = {
+    apiKey: "AIzaSyBHUmpV0rkgXXRWgNYCK5zDu5Kr9WdYntw",
+    authDomain: "mbbs-exam-batch-26-65e94.firebaseapp.com",
+    projectId: "mbbs-exam-batch-26-65e94",
+    storageBucket: "mbbs-exam-batch-26-65e94.firebasestorage.app",
+    messagingSenderId: "285727036890",
+    appId: "1:285727036890:web:3c13ded601633e5d045ce3",
+    measurementId: "G-ZZZ4EXSHLL"
+  };
+
+  // Initialize Firebase & Firestore Database
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // db ভ্যারিয়েবলটি যাতে গ্লোবালি ব্যবহার করতে পারো
+  window.db = db;
+  window.collection = collection;
+  window.addDoc = addDoc;
+  window.getDocs = getDocs;
+
+  console.log("Firebase & Firestore connected successfully!");
+        </script>
+        
 </body>
 </html>
