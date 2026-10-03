@@ -540,7 +540,277 @@ function handleAuthSubmit(event, type) {
     closeAuthModal();
 }
 </script>
-        <script type="module">
+        <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Admission Special Exam Batch 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00e676;
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --text: #ffffff;
+            --text-dim: #8b949e;
+            --bkash: #e2136e;
+            --accent: #238636;
+            --danger: #da3633;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding-bottom: 90px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            border-radius: 20px;
+            border: 1px solid #374151;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        h1 { font-size: 26px; margin-bottom: 8px; color: #fff; }
+        p.subtitle { color: var(--text-dim); font-size: 15px; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #30363d;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #30363d;
+        }
+
+        .tab-btn {
+            flex: 1; padding: 10px; border: none; background: none;
+            color: var(--text-dim); font-weight: 600; cursor: pointer;
+        }
+        .tab-btn.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">🎯 MBBS Admission 2026</span>
+        <h1>মেডিকেল ভর্তি পরীক্ষা স্পেশাল এক্সাম ব্যাচ</h1>
+        <p class="subtitle">রুটিনভিত্তিক মডেল টেস্ট ও ইনস্ট্যান্ট রেজাল্ট সার্ভিস</p>
+    </header>
+
+    <div class="card" style="text-align: center;">
+        <p style="color: #ff7675; font-weight: 600;">🔥 ইতিমধ্যে ৩৫০+ জন পরীক্ষার্থী ব্যাচে যুক্ত হয়েছে!</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">📚 ফ্রি স্পেশাল স্টাডি মেটেরিয়ালস (PDF)</div>
+        <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 15px;">দেশের শীর্ষস্থানীয় কোচিং প্ল্যাটফর্মগুলোর এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করে নাও!</p>
+        <button class="btn-primary" style="background: #2563eb;">📥 ডাউনলোড ফ্রি মেটেরিয়ালস</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="btn-primary" onclick="openAuthModal('signup')">রেজিস্ট্রেশন করুন</button>
+        <button class="btn-primary" style="background: transparent; border: 1px solid #30363d; margin-top: 8px;" onclick="openAuthModal('login')">লগইন করুন</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <div style="display: flex; margin-bottom: 20px; border-bottom: 1px solid #30363d;">
+            <button id="loginTabBtn" class="tab-btn active" onclick="switchAuthTab('login')">লগইন</button>
+            <button id="signupTabBtn" class="tab-btn" onclick="switchAuthTab('signup')">রেজিস্ট্রেশন</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="handleAuthSubmit(event, 'login')">
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 13px;">মোবাইল নম্বর</label>
+                <input type="tel" required placeholder="017XXXXXXXX" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 13px;">পাসওয়ার্ড</label>
+                <input type="password" required placeholder="******" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <button type="submit" class="btn-primary">প্রবেশ করুন</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" style="display: none;" onsubmit="handleAuthSubmit(event, 'signup')">
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 13px;">শিক্ষার্থীর নাম</label>
+                <input type="text" id="signupName" required placeholder="আপনার নাম" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 13px;">মোবাইল নম্বর (Phone)</label>
+                <input type="tel" id="signupPhone" required placeholder="017XXXXXXXX" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label style="font-size: 13px;">এইচএসসি রেজিস্ট্রেশন নম্বর</label>
+                <input type="text" id="signupReg" required placeholder="Ex: 2026101" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="font-size: 13px;">নতুন পাসওয়ার্ড তৈরি করুন</label>
+                <input type="password" id="signupPass" required placeholder="******" style="width: 100%; padding: 10px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 8px;">
+            </div>
+            <button type="submit" class="btn-primary">রেজিস্ট্রেশন</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openAuthModal(type) {
+    document.getElementById('authModal').style.display = 'flex';
+    switchAuthTab(type);
+}
+
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+}
+
+function switchAuthTab(type) {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginTabBtn = document.getElementById('loginTabBtn');
+    const signupTabBtn = document.getElementById('signupTabBtn');
+
+    if (type === 'login') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        loginTabBtn.classList.add('active');
+        signupTabBtn.classList.remove('active');
+    } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        signupTabBtn.classList.add('active');
+        loginTabBtn.classList.remove('active');
+    }
+}
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBHUmpV0rkgXXRWgNYCK5zDu5Kr9WdYntw",
+    authDomain: "mbbs-exam-batch-26-65e94.firebaseapp.com",
+    projectId: "mbbs-exam-batch-26-65e94",
+    storageBucket: "mbbs-exam-batch-26-65e94.firebasestorage.app",
+    messagingSenderId: "285727036890",
+    appId: "1:285727036890:web:3c13ded601633e5d045ce3",
+    measurementId: "G-ZZZ4EXSHLL"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.handleAuthSubmit = async function(event, type) {
+    event.preventDefault();
+
+    if (type === 'signup') {
+      const name = document.getElementById('signupName').value;
+      const phone = document.getElementById('signupPhone').value;
+      const reg = document.getElementById('signupReg').value;
+      const pass = document.getElementById('signupPass').value;
+
+      try {
+        await addDoc(collection(db, "users"), {
+          name: name,
+          phone: phone,
+          regNo: reg,
+          password: pass,
+          createdAt: new Date().toISOString()
+        });
+
+        alert('রেজিস্ট্রেশন সফল হয়েছে!');
+        closeAuthModal();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert('রেজিস্ট্রেশনে ত্রুটি হয়েছে, আবার চেষ্টা করুন।');
+      }
+    } else if (type === 'login') {
+      alert('লগইন সিস্টেমের কাজ চলছে...');
+      closeAuthModal();
+    }
+  };
+</script>
+
+</body>
+</html>
+        
   // Firebase SDKs Import
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
