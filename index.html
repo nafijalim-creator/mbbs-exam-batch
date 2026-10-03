@@ -14,6 +14,7 @@
             --text-dim: #8b949e;
             --bkash: #e2136e;
             --accent: #238636;
+            --danger: #da3633;
         }
 
         * {
@@ -73,7 +74,6 @@
             margin-top: 10px;
         }
 
-        /* Social Proof Banner */
         .social-proof {
             background: rgba(226, 19, 110, 0.1);
             border: 1px dashed var(--bkash);
@@ -86,30 +86,6 @@
             color: #ff80ab;
         }
 
-        /* Countdown Box */
-        .timer-box {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .timer-title {
-            font-size: 14px;
-            color: var(--text-dim);
-            margin-bottom: 8px;
-        }
-
-        .timer {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
-
-        /* Section Title */
         .section-title {
             font-size: 20px;
             font-weight: 700;
@@ -118,100 +94,82 @@
             padding-left: 10px;
         }
 
-        /* Feature Cards */
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .feature-icon {
-            font-size: 24px;
-        }
-
-        .feature-info strong {
-            font-size: 16px;
-            color: var(--text);
-            display: block;
-        }
-
-        .feature-info p {
-            font-size: 13px;
-            color: var(--text-dim);
-            margin-top: 2px;
-        }
-
-        /* Routine Section */
-        .routine-card {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
+        /* Free Materials / PDF Section */
+        .pdf-card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #3b82f6;
             border-radius: 16px;
             padding: 20px;
+            margin-bottom: 25px;
         }
 
-        .routine-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px dashed #30363d;
-            font-size: 14px;
-        }
-
-        .routine-item:last-child {
-            border-bottom: none;
-        }
-
-        .routine-date {
-            color: var(--primary);
+        .pdf-title {
+            color: #60a5fa;
             font-weight: 700;
-            background: rgba(0, 230, 118, 0.1);
-            padding: 4px 10px;
-            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* Sample Quiz */
-        .quiz-card {
-            background: var(--card-bg);
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            padding: 20px;
-        }
-
-        .quiz-card h3 {
-            font-size: 15px;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .quiz-card p.question {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .quiz-option {
-            background: #21262d;
-            border: 1px solid #30363d;
-            padding: 12px 15px;
-            border-radius: 10px;
-            margin-top: 8px;
-            cursor: pointer;
-            font-size: 14px;
+        .btn-pdf {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 12px;
             transition: 0.2s;
         }
 
-        .quiz-option:hover {
-            border-color: var(--primary);
-            background: #238636;
+        /* Exam Demo Box */
+        .exam-demo-box {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
         }
 
-        /* Payment Box with bKash Focus */
+        .q-item {
+            margin-bottom: 20px;
+            background: #21262d;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+
+        .q-text {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .opt-label {
+            display: block;
+            background: #161b22;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #30363d;
+            transition: 0.2s;
+        }
+
+        .opt-label:hover {
+            border-color: var(--primary);
+        }
+
+        .opt-label input {
+            margin-right: 8px;
+        }
+
+        /* Payment Box */
         .payment-box {
             background: var(--card-bg);
             border: 1px solid #30363d;
@@ -227,7 +185,6 @@
             color: #fff;
             margin-top: 15px;
             box-shadow: 0 8px 20px rgba(226, 19, 110, 0.3);
-            position: relative;
         }
 
         .bkash-number {
@@ -241,20 +198,8 @@
             cursor: pointer;
             display: inline-block;
             border: 1px dashed #fff;
-            transition: 0.2s;
         }
 
-        .bkash-number:active {
-            transform: scale(0.98);
-        }
-
-        .copy-hint {
-            font-size: 11px;
-            opacity: 0.9;
-            display: block;
-        }
-
-        /* CTA Button */
         .btn-primary {
             display: block;
             width: 100%;
@@ -269,16 +214,10 @@
             margin-top: 25px;
             cursor: pointer;
             border: none;
-            transition: 0.2s;
             box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
         }
 
-        .btn-primary:hover {
-            background: #00c853;
-            transform: translateY(-2px);
-        }
-
-        /* WhatsApp Floating Button */
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -295,14 +234,9 @@
             align-items: center;
             gap: 8px;
             z-index: 100;
-            transition: 0.2s;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.05);
-        }
-
-        /* Modal Styles */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -357,11 +291,6 @@
             color: #fff;
             font-size: 14px;
         }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
     </style>
 </head>
 <body>
@@ -371,74 +300,51 @@
         <header>
             <span class="badge">🎯 MBBS Admission 2026</span>
             <h1>মেডিকেল ভর্তি পরীক্ষা স্পেশাল এক্সাম ব্যাচ</h1>
-            <p class="subtitle">স্বপ্ন এখন হাতের মুঠোয়—প্রতিদিনের রুটিনভিত্তিক পরীক্ষা ও নির্ভুল প্রস্তুতি</p>
+            <p class="subtitle">রুটিনভিত্তিক মডেল টেস্ট ও ইনস্ট্যান্ট রেজাল্ট সার্ভিস</p>
         </header>
 
-        <!-- Social Proof -->
         <div class="social-proof">
             🔥 ইতিমধ্যে <strong>৩৫০+ জন</strong> পরীক্ষার্থী ব্যাচে যুক্ত হয়েছে!
         </div>
 
-        <!-- Timer -->
-        <div class="timer-box">
-            <div class="timer-title">⏰ বিশেষ অফারে ভর্তির সময় বাকি:</div>
-            <div class="timer" id="countdown">Loading...</div>
+        <!-- FREE PDF DOWNLOAD SECTION -->
+        <div class="pdf-card">
+            <div class="pdf-title">📚 ফ্রি স্পেশাল স্টাডি মেটেরিয়ালস (PDF)</div>
+            <p style="font-size: 13px; color: #cbd5e1;">দেশের শীর্ষস্থানীয় কোচিং প্ল্যাটফর্মগুলোর এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করে নাও!</p>
+            <a href="https://t.me/" target="_blank" class="btn-pdf">📥 ডাউনলোড ফ্রি মেটেরিয়ালস</a>
         </div>
 
-        <!-- Features -->
-        <h2 class="section-title">কোর্সের প্রধান বৈশিষ্ট্যসমূহ</h2>
-        <div class="feature-card">
-            <div class="feature-icon">📝</div>
-            <div class="feature-info">
-                <strong>ডেইলি ও উইকলি মডেল টেস্ট</strong>
-                <p>মেডিকেল ভর্তি পরীক্ষার প্রশ্নের মান বজায় রেখে তৈরি</p>
-            </div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <div class="feature-info">
-                <strong>ইনস্ট্যান্ট মেরিট লিস্ট</strong>
-                <p>পরীক্ষা শেষেই সরাসরি নিজের পজিশন ও নেগেটিভ মার্কস ট্র্যাকিং</p>
-            </div>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">💡</div>
-            <div class="feature-info">
-                <strong>প্রশ্ন ব্যাখ্যা ও ডাউট সলভ</strong>
-                <p>প্রতিটি প্রশ্নের বিস্তারিত সমাধান ও সমস্যা সমাধানের সুযোগ</p>
-            </div>
-        </div>
+        <!-- DEMO MEDICAL EXAM SYSTEM -->
+        <h2 class="section-title">🧪 মডেল টেস্ট এক্সপেরিয়েন্স (লাইভ ডেমো)</h2>
+        <div class="exam-demo-box">
+            <form id="demoExamForm">
+                
+                <!-- Question 1 -->
+                <div class="q-item">
+                    <div class="q-text">১. মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</div>
+                    <label class="opt-label"><input type="radio" name="q1" value="A"> ক) যকৃৎ (Liver)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="B"> খ) প্লীহা (Spleen)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="C"> গ) অগ্ন্যাশয় (Pancreas)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="D"> ঘ) থাইমাস (Thymus)</label>
+                </div>
 
-        <!-- Routine Preview -->
-        <h2 class="section-title">পরীক্ষার আপকামিং রুটিন</h2>
-        <div class="routine-card">
-            <div class="routine-item">
-                <span class="routine-date">১০ অক্টোবর</span>
-                <span>উদ্ভিদবিজ্ঞান: কোষ ও এর গঠন (Paper Final)</span>
-            </div>
-            <div class="routine-item">
-                <span class="routine-date">১২ অক্টোবর</span>
-                <span>প্রাণীবিজ্ঞান: প্রাণীর বিভিন্নতা ও শ্রেণিবিন্যাস</span>
-            </div>
-            <div class="routine-item">
-                <span class="routine-date">১৫ অক্টোবর</span>
-                <span>রসায়ন ১ম পত্র: গুণগত রসায়ন</span>
-            </div>
-            <div class="routine-item">
-                <span class="routine-date">১৮ অক্টোবর</span>
-                <span>পদার্থবিজ্ঞান ১ম পত্র: ভৌত জগত ও পরিমাপ</span>
-            </div>
-        </div>
+                <!-- Question 2 -->
+                <div class="q-item">
+                    <div class="q-text">২. রক্ত জমাট বাঁধতে সাহায্য করে কোন রক্তকণিকা?</div>
+                    <label class="opt-label"><input type="radio" name="q2" value="A"> ক) লোহিত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="B"> খ) শ্বেত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="C"> গ) অনুচক্রিকা (Platelet)</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="D"> ঘ) প্লাজমা</label>
+                </div>
 
-        <!-- Quiz Demo -->
-        <h2 class="section-title">নমুনা প্রশ্ন ডেমো</h2>
-        <div class="quiz-card">
-            <h3>🧪 নিজের প্রস্তুতি যাচাই করো:</h3>
-            <p class="question">প্রশ্ন: মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</p>
-            <div class="quiz-option" onclick="checkAnswer(this, false)">যকৃৎ (Liver)</div>
-            <div class="quiz-option" onclick="checkAnswer(this, true)">প্লীহা (Spleen)</div>
-            <div class="quiz-option" onclick="checkAnswer(this, false)">অগ্ন্যাশয় (Pancreas)</div>
-            <p id="quiz-result" style="margin-top: 12px; font-weight: 700; font-size: 14px;"></p>
+                <button type="button" class="btn-primary" style="margin-top: 10px; padding: 12px; font-size: 15px;" onclick="submitDemoExam()">পরীক্ষার রেজাল্ট দেখো 📊</button>
+            </form>
+
+            <div id="examResult" style="display: none; margin-top: 20px; padding: 15px; background: #161b22; border-radius: 10px; border: 1px solid var(--primary);">
+                <h3 style="color: var(--primary); font-size: 16px;">স্কোরকার্ড:</h3>
+                <p id="scoreText" style="font-size: 15px; margin-top: 5px; font-weight: 700;"></p>
+                <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">*প্রতিটি ভুল উত্তরের জন্য ০.২৫ মার্ক কাটা হয়েছে।</p>
+            </div>
         </div>
 
         <!-- Payment Section -->
@@ -448,13 +354,10 @@
             
             <div class="bkash-card">
                 <p style="font-size: 14px; font-weight: 600;">bKash Personal (Send Money):</p>
-                
-                <!-- CHANGE YOUR BKASH NUMBER HERE -->
                 <div class="bkash-number" onclick="copyBkash('01712949003')">
                     01712949003
-                    <span class="copy-hint">(কপি করতে ট্যাপ করো 📋)</span>
+                    <span style="font-size: 11px; opacity: 0.9; display: block;">(কপি করতে ট্যাপ করো 📋)</span>
                 </div>
-
                 <p style="font-size: 12px; opacity: 0.9;">টাকা পাঠানোর পর নিচের ফর্মে TrxID ও তোমার বিকাশ নম্বরটি সাবমিট করো।</p>
             </div>
         </div>
@@ -463,17 +366,15 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <!-- CHANGE YOUR WHATSAPP NUMBER HERE (e.g. 88017XXXXXXXX) -->
-    <a href="https://wa.me/+880 1846-187619?text=Hello!%20I%20want%20to%20know%20more%20about%20MBBS%20Exam%20Batch" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/8801846187619?text=Hello!%20I%20want%20to%20know%20more%20about%20MBBS%20Exam%20Batch" class="whatsapp-float" target="_blank">
         💬 হেল্পলাইন (WhatsApp)
     </a>
 
-    <!-- Enrollment Form Modal -->
+    <!-- Modal -->
     <div class="modal" id="enrollModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3 style="margin-bottom: 15px; color: var(--primary); text-align: center;">ভর্তি ফরম সাবমিট করো</h3>
-            
             <form id="enrollForm">
                 <div class="form-group">
                     <label>তোমার পুরো নাম</label>
@@ -491,20 +392,17 @@
                     <label>bKash Transaction ID (TrxID)</label>
                     <input type="text" placeholder="যেমন: 9J87X6K1" required>
                 </div>
-
                 <button type="submit" class="btn-primary" style="margin-top: 20px;">কনফার্ম সাবমিট ➔</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Copy bKash Number Function
         function copyBkash(number) {
             navigator.clipboard.writeText(number);
             alert('বিকাশ নম্বরটি কপি হয়েছে: ' + number);
         }
 
-        // Modal Control
         function openModal() {
             document.getElementById('enrollModal').style.display = 'flex';
         }
@@ -513,53 +411,31 @@
             document.getElementById('enrollModal').style.display = 'none';
         }
 
-        // Countdown Timer Logic
-        const countDownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000); // 2 days 14 hours from now
+        // Demo Exam Processing Logic
+        function submitDemoExam() {
+            let score = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
 
-        const timerInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = days + " দিন " + hours + " ঘণ্টা " + minutes + " মি " + seconds + " সে";
-
-            if (distance < 0) {
-                clearInterval(timerInterval);
-                document.getElementById("countdown").innerHTML = "সময় সমাপ্ত!";
+            if (!q1 || !q2) {
+                alert('সবগুলো প্রশ্নের উত্তর দিন!');
+                return;
             }
-        }, 1000);
 
-        // Quiz Logic
-        function checkAnswer(element, isCorrect) {
-            const result = document.getElementById('quiz-result');
-            const options = document.querySelectorAll('.quiz-option');
-            
-            options.forEach(opt => {
-                opt.style.background = '#21262d';
-                opt.style.borderColor = '#30363d';
-            });
+            // Evaluation: Q1 Correct = B, Q2 Correct = C
+            if (q1.value === 'B') score += 1;
+            else score -= 0.25;
 
-            if(isCorrect) {
-                element.style.background = '#238636';
-                element.style.borderColor = 'var(--primary)';
-                result.style.color = 'var(--primary)';
-                result.innerText = '✅ একদম সঠিক! মানবদেহের সবচেয়ে বড় লসিকা অঙ্গ হলো প্লীহা (Spleen)।';
-            } else {
-                element.style.background = '#da3633';
-                element.style.borderColor = '#f85149';
-                result.style.color = '#f85149';
-                result.innerText = '❌ ভুল উত্তর! সঠিক উত্তর হলো প্লীহা (Spleen)।';
-            }
+            if (q2.value === 'C') score += 1;
+            else score -= 0.25;
+
+            document.getElementById('examResult').style.display = 'block';
+            document.getElementById('scoreText').innerText = 'প্রাপ্ত নম্বর: ' + score + ' / ২.০০';
         }
 
-        // Form Submit
         document.getElementById('enrollForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('ধন্যবাদ! তোমার ভর্তির তথ্যসমূহ সফলভাবে গৃহীত হয়েছে। ভেরিফিকেশন শেষে ১ ঘন্টার মধ্যে তোমার নাম্বারে অ্যাক্সেস কোড/মেসেজ পাঠানো হবে।');
+            alert('ধন্যবাদ! তোমার ভর্তির তথ্যসমূহ সফলভাবে গৃহীত হয়েছে।');
             closeModal();
         });
     </script>
