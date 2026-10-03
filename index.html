@@ -451,5 +451,94 @@
             closeModal();
         });
     </script>
+        <!-- Auth Section / Login Buttons & Modal -->
+<div class="auth-wrapper" style="text-align: center; margin: 20px 0;">
+    <button onclick="openAuthModal('login')" class="btn-primary" style="margin-right: 10px; background: #2563eb;">🔐 লগইন করুন</button>
+    <button onclick="openAuthModal('signup')" class="btn-primary" style="background: #059669;">📝 রেজিস্ট্রেশন করুন</button>
+</div>
+
+<!-- Login / Signup Modal -->
+<div id="authModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#1e293b; color:#fff; width:90%; max-width:400px; padding:25px; border-radius:15px; border:1px solid #334155; position:relative;">
+        <span onclick="closeAuthModal()" style="position:absolute; top:12px; right:18px; font-size:24px; cursor:pointer; color:#94a3b8;">&times;</span>
+        
+        <!-- Tab Buttons -->
+        <div style="display:flex; justify-content:space-around; margin-bottom:20px; border-bottom:1px solid #334155; padding-bottom:10px;">
+            <button id="loginTabBtn" onclick="switchAuthTab('login')" style="background:none; border:none; color:#38bdf8; font-size:16px; font-weight:bold; cursor:pointer;">লগইন</button>
+            <button id="signupTabBtn" onclick="switchAuthTab('signup')" style="background:none; border:none; color:#94a3b8; font-size:16px; font-weight:bold; cursor:pointer;">রেজিস্ট্রেশন</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="handleAuthSubmit(event, 'login')">
+            <div style="margin-bottom:12px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">রেজিস্ট্রেশন নম্বর (Reg No):</label>
+                <input type="text" id="loginReg" required placeholder="Ex: 2026101" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <div style="margin-bottom:18px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">পাসওয়ার্ড (Password):</label>
+                <input type="password" id="loginPass" required placeholder="******" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; background:#2563eb; padding:12px;">প্রবেশ করুন ➔</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" onsubmit="handleAuthSubmit(event, 'signup')" style="display:none;">
+            <div style="margin-bottom:10px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">শিক্ষার্থীর নাম:</label>
+                <input type="text" id="signupName" required placeholder="তোমার নাম" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <div style="margin-bottom:10px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">মোবাইল নম্বর (Phone):</label>
+                <input type="tel" id="signupPhone" required placeholder="017XXXXXXXX" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <div style="margin-bottom:10px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">ইউনিক রেজিস্ট্রেশন নম্বর:</label>
+                <input type="text" id="signupReg" required placeholder="Ex: 2026101" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <div style="margin-bottom:18px; text-align:left;">
+                <label style="font-size:13px; color:#cbd5e1;">নতুন পাসওয়ার্ড তৈরি করো:</label>
+                <input type="password" id="signupPass" required placeholder="******" style="width:100%; padding:10px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; margin-top:4px;">
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%; background:#059669; padding:12px;">রেজিস্ট্রেশন সম্পন্ন করো ➔</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function openAuthModal(type) {
+    document.getElementById('authModal').style.display = 'flex';
+    switchAuthTab(type);
+}
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+}
+function switchAuthTab(type) {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginTabBtn = document.getElementById('loginTabBtn');
+    const signupTabBtn = document.getElementById('signupTabBtn');
+    
+    if(type === 'login') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        loginTabBtn.style.color = '#38bdf8';
+        signupTabBtn.style.color = '#94a3b8';
+    } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        loginTabBtn.style.color = '#94a3b8';
+        signupTabBtn.style.color = '#38bdf8';
+    }
+}
+function handleAuthSubmit(event, type) {
+    event.preventDefault();
+    if(type === 'login') {
+        alert('লগইন সিস্টেম সংযোগ করা হচ্ছে...');
+    } else {
+        alert('রেজিস্ট্রেশন সফল হয়েছে!');
+    }
+    closeAuthModal();
+}
+</script>
 </body>
 </html>
