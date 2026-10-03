@@ -13,6 +13,7 @@
             --text: #ffffff;
             --text-dim: #8b949e;
             --bkash: #e2136e;
+            --accent: #238636;
         }
 
         * {
@@ -33,12 +34,13 @@
         .container {
             max-width: 600px;
             width: 100%;
-            padding-bottom: 80px;
+            padding-bottom: 90px;
         }
 
+        /* Header Hero Banner */
         header {
             text-align: center;
-            padding: 30px 10px;
+            padding: 30px 15px;
             background: linear-gradient(135deg, #1f2937, #111827);
             border-radius: 20px;
             border: 1px solid #374151;
@@ -71,14 +73,52 @@
             margin-top: 10px;
         }
 
+        /* Social Proof Banner */
+        .social-proof {
+            background: rgba(226, 19, 110, 0.1);
+            border: 1px dashed var(--bkash);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #ff80ab;
+        }
+
+        /* Countdown Box */
+        .timer-box {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .timer-title {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .timer {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        /* Section Title */
         .section-title {
             font-size: 20px;
             font-weight: 700;
-            margin: 25px 0 15px 0;
+            margin: 30px 0 15px 0;
             border-left: 4px solid var(--primary);
             padding-left: 10px;
         }
 
+        /* Feature Cards */
         .feature-card {
             background: var(--card-bg);
             border: 1px solid #30363d;
@@ -117,7 +157,8 @@
         .routine-item {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            align-items: center;
+            padding: 12px 0;
             border-bottom: 1px dashed #30363d;
             font-size: 14px;
         }
@@ -128,10 +169,49 @@
 
         .routine-date {
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
+            background: rgba(0, 230, 118, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
         }
 
-        /* bKash Payment Box */
+        /* Sample Quiz */
+        .quiz-card {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .quiz-card h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .quiz-card p.question {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .quiz-option {
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #238636;
+        }
+
+        /* Payment Box with bKash Focus */
         .payment-box {
             background: var(--card-bg);
             border: 1px solid #30363d;
@@ -141,31 +221,40 @@
         }
 
         .bkash-card {
-            background: rgba(226, 19, 110, 0.08);
-            border: 1px solid var(--bkash);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 12px;
-        }
-
-        .bkash-title {
-            color: var(--bkash);
-            font-weight: 700;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+            background: linear-gradient(135deg, #e2136e, #a00b4c);
+            border-radius: 14px;
+            padding: 20px;
+            color: #fff;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(226, 19, 110, 0.3);
+            position: relative;
         }
 
         .bkash-number {
             font-size: 22px;
             font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-            margin: 8px 0;
+            letter-spacing: 1.5px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            cursor: pointer;
+            display: inline-block;
+            border: 1px dashed #fff;
+            transition: 0.2s;
         }
 
+        .bkash-number:active {
+            transform: scale(0.98);
+        }
+
+        .copy-hint {
+            font-size: 11px;
+            opacity: 0.9;
+            display: block;
+        }
+
+        /* CTA Button */
         .btn-primary {
             display: block;
             width: 100%;
@@ -181,13 +270,15 @@
             cursor: pointer;
             border: none;
             transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
         }
 
         .btn-primary:hover {
             background: #00c853;
+            transform: translateY(-2px);
         }
 
-        /* Floating WhatsApp Button */
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -199,14 +290,19 @@
             font-size: 14px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             gap: 8px;
             z-index: 100;
+            transition: 0.2s;
         }
 
-        /* Modal Popup */
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -235,7 +331,7 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 22px;
+            font-size: 24px;
             cursor: pointer;
             color: var(--text-dim);
         }
@@ -247,8 +343,8 @@
 
         .form-group label {
             display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
+            font-size: 13px;
+            margin-bottom: 6px;
             color: var(--text-dim);
         }
 
@@ -266,44 +362,55 @@
             outline: none;
             border-color: var(--primary);
         }
-
-        .bkash-badge {
-            background: var(--bkash);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Hero Section -->
         <header>
             <span class="badge">🎯 MBBS Admission 2026</span>
             <h1>মেডিকেল ভর্তি পরীক্ষা স্পেশাল এক্সাম ব্যাচ</h1>
-            <p class="subtitle">তোমার ডাক্তার হওয়ার স্বপ্ন পূরণের শেষ মুহূর্তের সেরা প্রস্তুতি</p>
+            <p class="subtitle">স্বপ্ন এখন হাতের মুঠোয়—প্রতিদিনের রুটিনভিত্তিক পরীক্ষা ও নির্ভুল প্রস্তুতি</p>
         </header>
 
+        <!-- Social Proof -->
+        <div class="social-proof">
+            🔥 ইতিমধ্যে <strong>৩৫০+ জন</strong> পরীক্ষার্থী ব্যাচে যুক্ত হয়েছে!
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-box">
+            <div class="timer-title">⏰ বিশেষ অফারে ভর্তির সময় বাকি:</div>
+            <div class="timer" id="countdown">Loading...</div>
+        </div>
+
+        <!-- Features -->
         <h2 class="section-title">কোর্সের প্রধান বৈশিষ্ট্যসমূহ</h2>
         <div class="feature-card">
             <div class="feature-icon">📝</div>
             <div class="feature-info">
                 <strong>ডেইলি ও উইকলি মডেল টেস্ট</strong>
-                <p>মেডিকেল স্ট্যান্ডার্ড প্রশ্নের ওপর অনলাইন পরীক্ষা</p>
+                <p>মেডিকেল ভর্তি পরীক্ষার প্রশ্নের মান বজায় রেখে তৈরি</p>
             </div>
         </div>
         <div class="feature-card">
             <div class="feature-icon">📊</div>
             <div class="feature-info">
                 <strong>ইনস্ট্যান্ট মেরিট লিস্ট</strong>
-                <p>সারাদেশের পরীক্ষার্থীদের সাথে পজিশন দেখার সুযোগ</p>
+                <p>পরীক্ষা শেষেই সরাসরি নিজের পজিশন ও নেগেটিভ মার্কস ট্র্যাকিং</p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <div class="feature-info">
+                <strong>প্রশ্ন ব্যাখ্যা ও ডাউট সলভ</strong>
+                <p>প্রতিটি প্রশ্নের বিস্তারিত সমাধান ও সমস্যা সমাধানের সুযোগ</p>
             </div>
         </div>
 
-        <!-- Routine Section -->
-        <h2 class="section-title">পরীক্ষার রুটিন (নমুনা)</h2>
+        <!-- Routine Preview -->
+        <h2 class="section-title">পরীক্ষার আপকামিং রুটিন</h2>
         <div class="routine-card">
             <div class="routine-item">
                 <span class="routine-date">১০ অক্টোবর</span>
@@ -323,59 +430,81 @@
             </div>
         </div>
 
-        <!-- Payment Info Section -->
-        <h2 class="section-title">ফি ও পেমেন্ট নির্দেশিকা</h2>
+        <!-- Quiz Demo -->
+        <h2 class="section-title">নমুনা প্রশ্ন ডেমো</h2>
+        <div class="quiz-card">
+            <h3>🧪 নিজের প্রস্তুতি যাচাই করো:</h3>
+            <p class="question">প্রশ্ন: মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</p>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">যকৃৎ (Liver)</div>
+            <div class="quiz-option" onclick="checkAnswer(this, true)">প্লীহা (Spleen)</div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">অগ্ন্যাশয় (Pancreas)</div>
+            <p id="quiz-result" style="margin-top: 12px; font-weight: 700; font-size: 14px;"></p>
+        </div>
+
+        <!-- Payment Section -->
+        <h2 class="section-title">কোর্স ফি ও বিকাশ পেমেন্ট</h2>
         <div class="payment-box">
-            <p>কোর্স ফি: <strong style="color: var(--primary); font-size: 20px;">৳৪৯৯</strong> (এককালীন)</p>
+            <p>কোর্স ফি: <strong style="color: var(--primary); font-size: 22px;">৳৪৯৯</strong> <span style="text-decoration: line-through; color: var(--text-dim); font-size: 14px;">(৳৯৯৯)</span></p>
+            
             <div class="bkash-card">
-                <div class="bkash-title">
-                    <span class="bkash-badge">bKash</span> Personal (Send Money)
+                <p style="font-size: 14px; font-weight: 600;">bKash Personal (Send Money):</p>
+                
+                <!-- CHANGE YOUR BKASH NUMBER HERE -->
+                <div class="bkash-number" onclick="copyBkash('01712949003')">
+                    01712949003
+                    <span class="copy-hint">(কপি করতে ট্যাপ করো 📋)</span>
                 </div>
-                <div class="bkash-number">017XXXXXXXX</div>
-                <p style="font-size: 12px; color: var(--text-dim);">উপরের নম্বরে Send Money করে নিচের ফর্মে তথ্য সাবমিট করো</p>
+
+                <p style="font-size: 12px; opacity: 0.9;">টাকা পাঠানোর পর নিচের ফর্মে TrxID ও তোমার বিকাশ নম্বরটি সাবমিট করো।</p>
             </div>
         </div>
 
-        <button class="btn-primary" onclick="openModal()">এখনই এনরোল করো 🚀</button>
+        <button class="btn-primary" onclick="openModal()">এখনই এনরোল সম্পন্ন করো 🚀</button>
     </div>
 
-    <!-- Floating WhatsApp Button -->
-    <!-- Replace 8801700000000 with your WhatsApp Number -->
-    <a href="https://wa.me/8801700000000?text=Hello!%20I%20want%20to%20know%20about%20MBBS%20Exam%20Batch" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Floating Button -->
+    <!-- CHANGE YOUR WHATSAPP NUMBER HERE (e.g. 88017XXXXXXXX) -->
+    <a href="https://wa.me/+880 1846-187619?text=Hello!%20I%20want%20to%20know%20more%20about%20MBBS%20Exam%20Batch" class="whatsapp-float" target="_blank">
         💬 হেল্পলাইন (WhatsApp)
     </a>
 
-    <!-- Modal Form -->
+    <!-- Enrollment Form Modal -->
     <div class="modal" id="enrollModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 style="margin-bottom: 5px; color: var(--primary);">ভর্তি ফরম</h3>
-            <p style="font-size: 13px; color: var(--text-dim); margin-bottom: 15px;">bKash-এ টাকা পাঠানোর পর ফর্মটি পূরণ করো</p>
+            <h3 style="margin-bottom: 15px; color: var(--primary); text-align: center;">ভর্তি ফরম সাবমিট করো</h3>
             
             <form id="enrollForm">
                 <div class="form-group">
-                    <label>তোমার নাম</label>
-                    <input type="text" placeholder="পুরো নাম লেখো" required>
+                    <label>তোমার পুরো নাম</label>
+                    <input type="text" placeholder="যেমন: আব্দুল্লাহ সাদিক" required>
                 </div>
                 <div class="form-group">
-                    <label>তোমার মোবাইল নম্বর (যোগাযোগের জন্য)</label>
+                    <label>তোমার সচল মোবাইল নম্বর</label>
                     <input type="tel" placeholder="017xxxxxxxx" required>
                 </div>
                 <div class="form-group">
-                    <label>যে bKash নম্বর থেকে টাকা পাঠিয়েছো</label>
+                    <label>যে বিকাশ নম্বর থেকে টাকা পাঠাতেছো/পাঠিয়েছো</label>
                     <input type="tel" placeholder="017xxxxxxxx" required>
                 </div>
                 <div class="form-group">
-                    <label>bKash TrxID (ট্রানজেকশন আইডি)</label>
+                    <label>bKash Transaction ID (TrxID)</label>
                     <input type="text" placeholder="যেমন: 9J87X6K1" required>
                 </div>
 
-                <button type="submit" class="btn-primary" style="margin-top: 20px;">সাবমিট নিশ্চিত করো</button>
+                <button type="submit" class="btn-primary" style="margin-top: 20px;">কনফার্ম সাবমিট ➔</button>
             </form>
         </div>
     </div>
 
     <script>
+        // Copy bKash Number Function
+        function copyBkash(number) {
+            navigator.clipboard.writeText(number);
+            alert('বিকাশ নম্বরটি কপি হয়েছে: ' + number);
+        }
+
+        // Modal Control
         function openModal() {
             document.getElementById('enrollModal').style.display = 'flex';
         }
@@ -384,9 +513,53 @@
             document.getElementById('enrollModal').style.display = 'none';
         }
 
+        // Countdown Timer Logic
+        const countDownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000); // 2 days 14 hours from now
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + " দিন " + hours + " ঘণ্টা " + minutes + " মি " + seconds + " সে";
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown").innerHTML = "সময় সমাপ্ত!";
+            }
+        }, 1000);
+
+        // Quiz Logic
+        function checkAnswer(element, isCorrect) {
+            const result = document.getElementById('quiz-result');
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options.forEach(opt => {
+                opt.style.background = '#21262d';
+                opt.style.borderColor = '#30363d';
+            });
+
+            if(isCorrect) {
+                element.style.background = '#238636';
+                element.style.borderColor = 'var(--primary)';
+                result.style.color = 'var(--primary)';
+                result.innerText = '✅ একদম সঠিক! মানবদেহের সবচেয়ে বড় লসিকা অঙ্গ হলো প্লীহা (Spleen)।';
+            } else {
+                element.style.background = '#da3633';
+                element.style.borderColor = '#f85149';
+                result.style.color = '#f85149';
+                result.innerText = '❌ ভুল উত্তর! সঠিক উত্তর হলো প্লীহা (Spleen)।';
+            }
+        }
+
+        // Form Submit
         document.getElementById('enrollForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('ধন্যবাদ! তোমার ভর্তির আবেদনটি গৃহীত হয়েছে। খুব শীঘ্রই যাচাই করে SMS/WhatsApp-এ কনফার্মেশন পাঠানো হবে।');
+            alert('ধন্যবাদ! তোমার ভর্তির তথ্যসমূহ সফলভাবে গৃহীত হয়েছে। ভেরিফিকেশন শেষে ১ ঘন্টার মধ্যে তোমার নাম্বারে অ্যাক্সেস কোড/মেসেজ পাঠানো হবে।');
             closeModal();
         });
     </script>
