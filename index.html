@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MBBS Admission Special Exam Batch 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #059669;
-            --primary-light: #ecfdf5;
-            --primary-hover: #047857;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --primary: #00e676;
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --text: #ffffff;
+            --text-dim: #8b949e;
+            --accent: #238636;
         }
 
         * {
@@ -28,202 +24,161 @@
 
         body {
             background-color: var(--bg);
-            color: var(--text-main);
-            padding: 24px 16px;
+            color: var(--text);
+            padding: 20px;
             display: flex;
             justify-content: center;
-            min-height: 100vh;
         }
 
         .container {
-            max-width: 580px;
+            max-width: 600px;
             width: 100%;
         }
 
         header {
             text-align: center;
-            padding: 36px 20px;
-            background: var(--card-bg);
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-md);
-            margin-bottom: 20px;
+            padding: 30px 10px;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            border-radius: 20px;
+            border: 1px solid #374151;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
         }
 
         .badge {
-            background: var(--primary-light);
+            background: rgba(0, 230, 118, 0.15);
             color: var(--primary);
-            padding: 6px 18px;
-            border-radius: 999px;
-            font-size: 13px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 16px;
-            border: 1px solid #a7f3d0;
-            letter-spacing: 0.3px;
+            margin-bottom: 15px;
+            border: 1px solid var(--primary);
         }
 
         h1 {
             font-size: 26px;
             font-weight: 700;
-            line-height: 1.35;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+            line-height: 1.4;
+            color: #fff;
         }
 
         p.subtitle {
-            color: var(--text-muted);
+            color: var(--text-dim);
             font-size: 15px;
             margin-top: 10px;
-            font-weight: 500;
         }
 
         .timer-box {
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
+            border: 1px solid #30363d;
+            border-radius: 16px;
             padding: 20px;
             text-align: center;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
         }
 
         .timer-title {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-dim);
             margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .timer {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary);
-            letter-spacing: 1px;
         }
 
         .section-title {
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 4px;
-            display: inline-block;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
         }
 
         .feature-card {
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px 20px;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 15px 20px;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 16px;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            gap: 15px;
         }
 
         .feature-icon {
-            font-size: 22px;
-            background: var(--primary-light);
-            padding: 10px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 24px;
         }
 
         .feature-info strong {
             font-size: 16px;
-            color: var(--text-main);
+            color: var(--text);
             display: block;
         }
 
         .feature-info p {
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--text-dim);
             margin-top: 2px;
         }
 
         .quiz-card {
             background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 24px;
-            margin-top: 24px;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
         }
 
         .quiz-card h3 {
-            font-size: 15px;
+            font-size: 16px;
             margin-bottom: 12px;
             color: var(--primary);
-            font-weight: 700;
         }
 
         .quiz-card p.question {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .quiz-option {
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            padding: 14px 18px;
-            border-radius: 12px;
-            margin-top: 10px;
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 8px;
             cursor: pointer;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-main);
-            transition: all 0.2s ease;
+            font-size: 14px;
+            transition: 0.2s;
         }
 
         .quiz-option:hover {
             border-color: var(--primary);
-            background: var(--primary-light);
-            color: var(--primary);
+            background: #238636;
         }
 
         .btn-primary {
             display: block;
             width: 100%;
             background: var(--primary);
-            color: #ffffff;
+            color: #000;
             text-align: center;
             padding: 16px;
-            border-radius: 16px;
-            font-size: 17px;
+            border-radius: 14px;
+            font-size: 18px;
             font-weight: 700;
             text-decoration: none;
-            margin-top: 28px;
-            box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.4);
-            transition: all 0.2s ease;
+            margin-top: 25px;
+            transition: 0.2s;
         }
 
         .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-1px);
+            background: #00c853;
         }
     </style>
 </head>
@@ -236,8 +191,8 @@
         </header>
 
         <div class="timer-box">
-            <div class="timer-title">⏰ ভর্তি শেষ হতে বাকি সময়</div>
-            <div class="timer" id="countdown">02 দিন : 14 ঘণ্টা : 30 মি</div>
+            <div class="timer-title">⏰ ভর্তি শেষ হতে বাকি সময়:</div>
+            <div class="timer" id="countdown">02দিন 14ঘণ্টা 30মি</div>
         </div>
 
         <h2 class="section-title">কোর্সের প্রধান বৈশিষ্ট্যসমূহ</h2>
@@ -246,7 +201,7 @@
             <div class="feature-icon">📝</div>
             <div class="feature-info">
                 <strong>ডেইলি ও উইকলি মডেল টেস্ট</strong>
-                <p>মেডিকেল স্ট্যান্ডার্ড প্রশ্নের ওপর অনলাইন পরীক্ষা</p>
+                <p>মেডিকেল স্ট্যান্ডার্ড প্রশ্নের ওপর পরীক্ষা</p>
             </div>
         </div>
 
@@ -254,7 +209,7 @@
             <div class="feature-icon">📊</div>
             <div class="feature-info">
                 <strong>ইনস্ট্যান্ট মেরিট লিস্ট</strong>
-                <p>সারাদেশের শিক্ষার্থীদের সাথে রিয়েল-টাইম প্রতিযোগিতা</p>
+                <p>সারাদেশের শিক্ষার্থীদের সাথে প্রতিযোগিতা</p>
             </div>
         </div>
 
@@ -262,17 +217,17 @@
             <div class="feature-icon">💡</div>
             <div class="feature-info">
                 <strong>ব্যাখ্যাসহ সমাধান</strong>
-                <p>প্রতিটি ভুলের সঠিক ও বিস্তারিত ব্যাখ্যা বিশ্লেষণ</p>
+                <p>প্রতিটি ভুলের সঠিক ব্যাখ্যা বিশ্লেষণ</p>
             </div>
         </div>
 
         <div class="quiz-card">
-            <h3>🧪 একটি নমুনা প্রশ্ন সমাধান করো</h3>
+            <h3>🧪 একটি নমুনা প্রশ্ন সমাধান করো:</h3>
             <p class="question">প্রশ্ন: মানবদেহের সবচেয়ে বড় গ্রন্থি কোনটি?</p>
             <div class="quiz-option" onclick="checkAnswer(this, false)">অগ্ন্যাশয় (Pancreas)</div>
             <div class="quiz-option" onclick="checkAnswer(this, true)">যকৃৎ (Liver)</div>
             <div class="quiz-option" onclick="checkAnswer(this, false)">থাইরয়েড (Thyroid)</div>
-            <p id="quiz-result" style="margin-top: 16px; font-weight: 700; font-size: 14px;"></p>
+            <p id="quiz-result" style="margin-top: 12px; font-weight: 700; font-size: 14px;"></p>
         </div>
 
         <a href="#" class="btn-primary">এখনই ভর্তি হও 🚀</a>
@@ -284,22 +239,19 @@
             const options = document.querySelectorAll('.quiz-option');
             
             options.forEach(opt => {
-                opt.style.background = '#f1f5f9';
-                opt.style.borderColor = 'var(--border)';
-                opt.style.color = 'var(--text-main)';
+                opt.style.background = '#21262d';
+                opt.style.borderColor = '#30363d';
             });
 
             if(isCorrect) {
-                element.style.background = '#dcfce7';
-                element.style.borderColor = '#16a34a';
-                element.style.color = '#15803d';
-                result.style.color = '#16a34a';
+                element.style.background = '#238636';
+                element.style.borderColor = 'var(--primary)';
+                result.style.color = 'var(--primary)';
                 result.innerText = '✅ সঠিক উত্তর! যকৃৎ (Liver) হলো মানবদেহের সবচেয়ে বড় গ্রন্থি।';
             } else {
-                element.style.background = '#fee2e2';
-                element.style.borderColor = '#dc2626';
-                element.style.color = '#b91c1c';
-                result.style.color = '#dc2626';
+                element.style.background = '#da3633';
+                element.style.borderColor = '#f85149';
+                result.style.color = '#f85149';
                 result.innerText = '❌ ভুল উত্তর! আবার চেষ্টা করো।';
             }
         }
