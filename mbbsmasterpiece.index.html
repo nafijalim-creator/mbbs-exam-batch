@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Admission Special Exam Batch 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00e676;
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --text: #ffffff;
+            --text-dim: #8b949e;
+            --accent: #238636;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 10px;
+            background: linear-gradient(135deg, #1f2937, #111827);
+            border-radius: 20px;
+            border: 1px solid #30363d;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            background: rgba(0, 230, 118, 0.15);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid var(--primary);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #fff;
+        }
+
+        p.subtitle {
+            color: var(--text-dim);
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        /* Countdown Timer */
+        .timer-box {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .timer-title {
+            font-size: 14px;
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        /* Features */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .features {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Interactive Quiz Demo */
+        .quiz-card {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .option-btn {
+            width: 100%;
+            background: #21262d;
+            color: #fff;
+            border: 1px solid #30363d;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option-btn:hover {
+            background: #30363d;
+        }
+
+        .result-box {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            text-align: center;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 230, 118, 0.4);
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background: #00c853;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 13px;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="badge">🔥 Mission Medical 2026</div>
+        <h1>MBBS Admissions Special<br>Exclusive Exam Batch</h1>
+        <p class="subtitle">স্মার্ট প্রস্তুতি, নির্ভুল অ্যানালাইসিস এবং শতভাগ মেডিকেল স্ট্যান্ডার্ড এক্সাম নিয়ে জয় করো তোমার স্বপ্ন!</p>
+    </header>
+
+    <!-- Timer -->
+    <div class="timer-box">
+        <div class="timer-title">⏰ ডিসকাউন্ট ও এনরোলমেন্টের সময় বাকি:</div>
+        <div class="timer" id="countdown">02d : 14h : 35m : 10s</div>
+    </div>
+
+    <!-- Features -->
+    <div class="section-title">কেন এই এক্সাম ব্যাচে যুক্ত হবে?</div>
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <div>
+                <h4>অধ্যায়ভিত্তিক ৫০+ মডেল টেস্ট</h4>
+                <p style="font-size: 13px; color: var(--text-dim);">Biology, Chemistry, Physics & GK-এর অধ্যায়ভিত্তিক নিখুঁত পরীক্ষা।</p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div>
+                <h4>ইনস্ট্যান্ট রেজাল্ট ও এক্সপ্ল্যানেশন</h4>
+                <p style="font-size: 13px; color: var(--text-dim);">পরীক্ষা শেষেই ব্যাখ্যাসহ মার্কস ও নেগেটিভ মার্জিন অ্যানালাইসিস।</p>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏆</div>
+            <div>
+                <h4>লাইভ মেরিট লিডারবোর্ড</h4>
+                <p style="font-size: 13px; color: var(--text-dim);">দেশজুড়ে হাজারো পরীক্ষার্থীর মাঝে নিজের অবস্থান যাচাই করার সুযোগ।</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Quiz Demo -->
+    <div class="section-title">লাইভ ডেমো কোশ্চেন টেস্ট</div>
+    <div class="quiz-card">
+        <div class="quiz-question">প্রশ্ন: মানুষের হৃদপিণ্ডের কোন প্রকোষ্ঠে অক্সিডাইজড (বিশুদ্ধ) রক্ত থাকে?</div>
+        <button class="option-btn" onclick="checkAnswer(this, false)">A) ডান অলিন্দ (Right Atrium)</button>
+        <button class="option-btn" onclick="checkAnswer(this, false)">B) ডান নিলয় (Right Ventricle)</button>
+        <button class="option-btn" onclick="checkAnswer(this, true)">C) বাম অলিন্দ ও বাম নিলয় (Left Atrium & Ventricle)</button>
+        <button class="option-btn" onclick="checkAnswer(this, false)">D) শুধুমাত্র মহাধমনীতে</button>
+        <div class="result-box" id="quiz-result"></div>
+    </div>
+
+    <!-- CTA Enrollment -->
+    <a href="https://wa.me/8801700000000?text=I%20want%20to%20enroll%20in%20MBBS%20Exam%20Batch" class="cta-btn" target="_blank">
+        📲 এনরোল করতে মেসেজ দাও (WhatsApp)
+    </a>
+
+    <footer>
+        © 2026 MBBS Special Exam Batch | Designed for Future Doctors 💉
+    </footer>
+</div>
+
+<script>
+    // Interactive Quiz Logic
+    function checkAnswer(btn, isCorrect) {
+        const result = document.getElementById('quiz-result');
+        result.style.display = 'block';
+        if(isCorrect) {
+            btn.style.background = '#238636';
+            btn.style.borderColor = '#00e676';
+            result.style.color = '#00e676';
+            result.innerHTML = '✅ সঠিক উত্তর! বাম অলিন্দ ও নিলয় ফুসফুস থেকে আসা অক্সিজেনযুক্ত রক্ত বহন করে।';
+        } else {
+            btn.style.background = '#da3633';
+            result.style.color = '#ff7b72';
+            result.innerHTML = '❌ ভুল উত্তর! আবার চেষ্টা করো। (সঠিক উত্তর: C)';
+        }
+    }
+
+    // Countdown Logic
+    let countDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000);
+    setInterval(function() {
+        let now = new Date().getTime();
+        let gap = countDate - now;
+
+        let days = Math.floor(gap / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').innerHTML = 
+            `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+    }, 1000);
+</script>
+
+</body>
+</html>
+
