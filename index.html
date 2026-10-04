@@ -38,6 +38,7 @@
             padding-bottom: 90px;
         }
 
+        /* Header Hero Banner */
         header {
             text-align: center;
             padding: 30px 15px;
@@ -93,6 +94,7 @@
             padding-left: 10px;
         }
 
+        /* Free Materials / PDF Section */
         .pdf-card {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             border: 1px solid #3b82f6;
@@ -106,6 +108,9 @@
             font-weight: 700;
             font-size: 16px;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-pdf {
@@ -118,9 +123,10 @@
             font-weight: 700;
             text-decoration: none;
             margin-top: 12px;
+            transition: 0.2s;
         }
 
-        /* Question & Option Style */
+        /* Exam Demo Box */
         .exam-demo-box {
             background: var(--card-bg);
             border: 1px solid #30363d;
@@ -157,27 +163,63 @@
             user-select: none;
         }
 
-        .opt-label input[type="radio"] {
-            margin-right: 12px;
+        .opt-label input {
+            margin-right: 10px;
             width: 18px;
             height: 18px;
             accent-color: var(--primary);
             cursor: pointer;
-            pointer-events: auto; /* সমস্যা ফিক্স করার জন্য */
         }
 
-        /* Result States */
-        .opt-label.correct-ans {
+        /* Status colors for correct and wrong answers */
+        .opt-label.correct {
             background: rgba(0, 230, 118, 0.2) !important;
-            border: 1px solid var(--primary) !important;
+            border-color: var(--primary) !important;
             color: var(--primary) !important;
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        .opt-label.wrong-ans {
+        .opt-label.wrong {
             background: rgba(218, 54, 51, 0.2) !important;
-            border: 1px solid var(--danger) !important;
+            border-color: var(--danger) !important;
             color: #ff7675 !important;
+            font-weight: 700;
+        }
+
+        .opt-label.disabled {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        /* Payment Box */
+        .payment-box {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .bkash-card {
+            background: linear-gradient(135deg, #e2136e, #a00b4c);
+            border-radius: 14px;
+            padding: 20px;
+            color: #fff;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(226, 19, 110, 0.3);
+        }
+
+        .bkash-number {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            cursor: pointer;
+            display: inline-block;
+            border: 1px dashed #fff;
         }
 
         .btn-primary {
@@ -191,29 +233,92 @@
             font-size: 18px;
             font-weight: 700;
             text-decoration: none;
-            margin-top: 15px;
+            margin-top: 25px;
             cursor: pointer;
             border: none;
             box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
         }
 
-        /* Payment Box & Modals */
-        .payment-box { background: var(--card-bg); border: 1px solid #30363d; border-radius: 16px; padding: 20px; text-align: center; }
-        .bkash-card { background: linear-gradient(135deg, #e2136e, #a00b4c); border-radius: 14px; padding: 20px; color: #fff; margin-top: 15px; }
-        .bkash-number { font-size: 22px; font-weight: 700; background: rgba(0,0,0,0.25); padding: 10px; border-radius: 10px; margin: 10px 0; cursor: pointer; border: 1px dashed #fff; display: inline-block; }
-        
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; border-radius: 50px; padding: 12px 20px; font-size: 14px; font-weight: 700; text-decoration: none; z-index: 100; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
-        .modal-content { background: var(--card-bg); border: 1px solid #30363d; border-radius: 20px; padding: 25px; width: 100%; max-width: 450px; position: relative; }
-        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: var(--text-dim); }
-        .form-group { margin-top: 15px; text-align: left; }
-        .form-group label { display: block; font-size: 13px; margin-bottom: 6px; color: var(--text-dim); }
-        .form-group input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #fff; font-size: 14px; }
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 25px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-dim);
+        }
+
+        .form-group {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: var(--text-dim);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+            color: #fff;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Hero Section -->
         <header>
             <span class="badge">🎯 MBBS Admission 2026</span>
             <h1>মেডিকেল ভর্তি পরীক্ষা স্পেশাল এক্সাম ব্যাচ</h1>
@@ -224,9 +329,10 @@
             🔥 ইতিমধ্যে <strong>৩৫০+ জন</strong> পরীক্ষার্থী ব্যাচে যুক্ত হয়েছে!
         </div>
 
+        <!-- FREE PDF DOWNLOAD SECTION -->
         <div class="pdf-card">
             <div class="pdf-title">📚 ফ্রি স্পেশাল স্টাডি মেটেরিয়ালস (PDF)</div>
-            <p style="font-size: 13px; color: #cbd5e1;">এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করে নাও!</p>
+            <p style="font-size: 13px; color: #cbd5e1;">দেশের শীর্ষস্থানীয় কোচিং প্ল্যাটফর্মগুলোর এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করে নাও!</p>
             <a href="https://t.me/" target="_blank" class="btn-pdf">📥 ডাউনলোড ফ্রি মেটেরিয়ালস</a>
         </div>
 
@@ -234,37 +340,37 @@
         <h2 class="section-title">🧪 মডেল টেস্ট এক্সপেরিয়েন্স (লাইভ ডেমো)</h2>
         <div class="exam-demo-box">
             <form id="demoExamForm">
-                <!-- Question 1 -->
-                <div class="q-item">
+                
+                <!-- Question 1 (Correct Answer: B) -->
+                <div class="q-item" data-correct="B">
                     <div class="q-text">১. মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</div>
-                    <label class="opt-label"><input type="radio" name="q1" value="A"> ক) যকৃৎ (Liver)</label>
-                    <label class="opt-label"><input type="radio" name="q1" value="B"> খ) প্লীহা (Spleen)</label>
-                    <label class="opt-label"><input type="radio" name="q1" value="C"> গ) অগ্ন্যাশয় (Pancreas)</label>
-                    <label class="opt-label"><input type="radio" name="q1" value="D"> ঘ) থাইমাস (Thymus)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="A" onclick="handleOptionSelect(this)"> ক) যকৃৎ (Liver)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="B" onclick="handleOptionSelect(this)"> খ) প্লীহা (Spleen)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="C" onclick="handleOptionSelect(this)"> গ) অগ্ন্যাশয় (Pancreas)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="D" onclick="handleOptionSelect(this)"> ঘ) থাইমাস (Thymus)</label>
                 </div>
 
-                <!-- Question 2 -->
-                <div class="q-item">
+                <!-- Question 2 (Correct Answer: C) -->
+                <div class="q-item" data-correct="C">
                     <div class="q-text">২. রক্ত জমাট বাঁধতে সাহায্য করে কোন রক্তকণিকা?</div>
-                    <label class="opt-label"><input type="radio" name="q2" value="A"> ক) লোহিত রক্তকণিকা</label>
-                    <label class="opt-label"><input type="radio" name="q2" value="B"> খ) শ্বেত রক্তকণিকা</label>
-                    <label class="opt-label"><input type="radio" name="q2" value="C"> গ) অনুচক্রিকা (Platelet)</label>
-                    <label class="opt-label"><input type="radio" name="q2" value="D"> ঘ) প্লাজমা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="A" onclick="handleOptionSelect(this)"> ক) লোহিত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="B" onclick="handleOptionSelect(this)"> খ) শ্বেত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="C" onclick="handleOptionSelect(this)"> গ) অনুচক্রিকা (Platelet)</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="D" onclick="handleOptionSelect(this)"> ঘ) প্লাজমা</label>
                 </div>
 
-                <button type="button" class="btn-primary" style="font-size: 16px;" onclick="calculateResult()">পরীক্ষার রেজাল্ট দেখো 📊</button>
             </form>
 
             <div id="examResult" style="display: none; margin-top: 20px; padding: 15px; background: #161b22; border-radius: 10px; border: 1px solid var(--primary);">
                 <h3 style="color: var(--primary); font-size: 16px;">স্কোরকার্ড:</h3>
-                <p id="scoreText" style="font-size: 16px; margin-top: 5px; font-weight: 700;"></p>
-                <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">*প্রতিটি ভুল উত্তরের জন্য ০.২৫ মার্ক কাটা হয়েছে।</p>
+                <p id="scoreText" style="font-size: 15px; margin-top: 5px; font-weight: 700;"></p>
+                <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">*মেডিকেল পরীক্ষার নিয়ম অনুযায়ী ভুল উত্তরে ০.২৫ মার্ক কাটা হয়।</p>
             </div>
         </div>
 
         <div style="text-align: center; margin: 25px 0;">
-            <a href="demo_exam.html" class="btn-primary" style="background: #00e676; color: #000; display: block; text-decoration: none;">
-                🧪 ডেমো এক্সাম শুরু করো (100 MCQs) ➔
+            <a href="demo_exam.html" class="btn-primary" style="display: inline-block; text-decoration: none; padding: 14px 20px;">
+                🧪 ডেমো এক্সাম শুরু করো (১০০ MCQ) ➔
             </a>
         </div>
 
@@ -272,109 +378,244 @@
         <h2 class="section-title">কোর্স ফি ও বিকাশ পেমেন্ট</h2>
         <div class="payment-box">
             <p>কোর্স ফি: <strong style="color: var(--primary); font-size: 22px;">৳৪৯৯</strong> <span style="text-decoration: line-through; color: var(--text-dim); font-size: 14px;">(৳৯৯৯)</span></p>
+            
             <div class="bkash-card">
                 <p style="font-size: 14px; font-weight: 600;">bKash Personal (Send Money):</p>
                 <div class="bkash-number" onclick="copyBkash('01712949003')">
                     01712949003
                     <span style="font-size: 11px; opacity: 0.9; display: block;">(কপি করতে ট্যাপ করো 📋)</span>
                 </div>
+                <p style="font-size: 12px; opacity: 0.9;">টাকা পাঠানোর পর নিচের ফর্মে TrxID ও তোমার বিকাশ নম্বরটি সাবমিট করো।</p>
             </div>
         </div>
 
         <button class="btn-primary" onclick="openEnrollModal()">এখনই এনরোল সম্পন্ন করো 🚀</button>
 
-        <div style="text-align: center; margin-top: 20px; display: flex; gap: 10px;">
-            <button class="btn-primary" style="background: #2563eb; color: #fff; margin-top: 0;" onclick="openAuthModal('login')">🔐 লগইন</button>
-            <button class="btn-primary" style="background: #059669; color: #fff; margin-top: 0;" onclick="openAuthModal('signup')">📝 রেজিস্ট্রেশন</button>
+        <!-- Auth Section / Login Buttons -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn-primary" style="background: #2563eb; width: 48%; display: inline-block; margin-right: 2%;" onclick="openAuthModal('login')">🔐 লগইন করুন</button>
+            <button class="btn-primary" style="background: #059669; width: 48%; display: inline-block;" onclick="openAuthModal('signup')">📝 রেজিস্ট্রেশন করুন</button>
         </div>
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/8801846187619" class="whatsapp-float" target="_blank">💬 হেল্পলাইন</a>
+    <a href="https://wa.me/8801846187619?text=Hello!%20I%20want%20to%20know%20more%20about%20MBBS%20Exam%20Batch" class="whatsapp-float" target="_blank">
+        💬 হেল্পলাইন (WhatsApp)
+    </a>
 
-    <!-- Modals -->
+    <!-- Enroll Modal -->
     <div class="modal" id="enrollModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeEnrollModal()">&times;</span>
-            <h3 style="margin-bottom: 15px; color: var(--primary); text-align: center;">ভর্তি ফরম</h3>
+            <h3 style="margin-bottom: 15px; color: var(--primary); text-align: center;">ভর্তি ফরম সাবমিট করো</h3>
             <form id="enrollForm">
-                <div class="form-group"><label>নাম</label><input type="text" required></div>
-                <div class="form-group"><label>মোবাইল</label><input type="tel" required></div>
-                <div class="form-group"><label>TrxID</label><input type="text" required></div>
-                <button type="submit" class="btn-primary">সাবমিট ➔</button>
+                <div class="form-group">
+                    <label>তোমার পুরো নাম</label>
+                    <input type="text" placeholder="যেমন: আব্দুল্লাহ সাদিক" required>
+                </div>
+                <div class="form-group">
+                    <label>তোমার সচল মোবাইল নম্বর</label>
+                    <input type="tel" placeholder="017xxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>যে বিকাশ নম্বর থেকে টাকা পাঠাতেছো/পাঠিয়েছো</label>
+                    <input type="tel" placeholder="017xxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>bKash Transaction ID (TrxID)</label>
+                    <input type="text" placeholder="যেমন: 9J87X6K1" required>
+                </div>
+                <button type="submit" class="btn-primary" style="margin-top: 20px;">কনফার্ম সাবমিট ➔</button>
             </form>
         </div>
     </div>
 
+    <!-- Auth Modal (Login / Signup) -->
     <div id="authModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeAuthModal()">&times;</span>
-            <h3 style="text-align: center; color: var(--primary); margin-bottom: 15px;">অ্যাকাউন্ট</h3>
-            <p style="text-align: center; color: var(--text-dim);">লগইন/রেজিস্ট্রেশন ফরম</p>
+            <div style="display: flex; margin-bottom: 20px; border-bottom: 1px solid #30363d;">
+                <button id="loginTabBtn" class="tab-btn active" onclick="switchAuthTab('login')" style="flex: 1; padding: 10px; background: none; border: none; color: var(--primary); font-weight: bold; cursor: pointer;">লগইন</button>
+                <button id="signupTabBtn" class="tab-btn" onclick="switchAuthTab('signup')" style="flex: 1; padding: 10px; background: none; border: none; color: var(--text-dim); font-weight: bold; cursor: pointer;">রেজিস্ট্রেশন</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="handleAuthSubmit(event, 'login')">
+                <div class="form-group">
+                    <label>মোবাইল নম্বর</label>
+                    <input type="tel" id="loginPhone" required placeholder="017XXXXXXXX">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>পাসওয়ার্ড</label>
+                    <input type="password" id="loginPass" required placeholder="******">
+                </div>
+                <button type="submit" class="btn-primary">প্রবেশ করুন</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" style="display: none;" onsubmit="handleAuthSubmit(event, 'signup')">
+                <div class="form-group">
+                    <label>শিক্ষার্থীর নাম</label>
+                    <input type="text" id="signupName" required placeholder="আপনার নাম">
+                </div>
+                <div class="form-group">
+                    <label>মোবাইল নম্বর (Phone)</label>
+                    <input type="tel" id="signupPhone" required placeholder="017XXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>এইচএসসি রেজিস্ট্রেশন নম্বর</label>
+                    <input type="text" id="signupReg" required placeholder="Ex: 2026101">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>নতুন পাসওয়ার্ড তৈরি করুন</label>
+                    <input type="password" id="signupPass" required placeholder="******">
+                </div>
+                <button type="submit" class="btn-primary">রেজিস্ট্রেশন করুন</button>
+            </form>
         </div>
     </div>
 
     <script>
-        // Answer Key for Landing Page Demo
-        const correctAnswers = {
-            q1: "B", // প্লীহা (Spleen)
-            q2: "C"  // অনুচক্রিকা
-        };
+        let totalQuestions = 2;
+        let answeredQuestions = 0;
+        let totalScore = 0;
 
-        function calculateResult() {
-            let score = 0;
-            let total = 2;
-            let answered = 0;
+        function copyBkash(number) {
+            navigator.clipboard.writeText(number);
+            alert('বিকাশ নম্বরটি কপি হয়েছে: ' + number);
+        }
 
-            for (let q in correctAnswers) {
-                const selected = document.querySelector(`input[name="${q}"]:checked`);
-                const allOptions = document.querySelectorAll(`input[name="${q}"]`);
+        function openEnrollModal() {
+            document.getElementById('enrollModal').style.display = 'flex';
+        }
 
-                if (selected) {
-                    answered++;
-                }
+        function closeEnrollModal() {
+            document.getElementById('enrollModal').style.display = 'none';
+        }
 
-                allOptions.forEach(opt => {
-                    const label = opt.parentElement;
-                    // Disable changing option after submitted
-                    opt.disabled = true;
+        function openAuthModal(type) {
+            document.getElementById('authModal').style.display = 'flex';
+            switchAuthTab(type);
+        }
 
-                    if (opt.value === correctAnswers[q]) {
-                        label.classList.add('correct-ans'); // সঠিক উত্তর সবুজ
-                    } 
-                    if (selected && opt.checked && opt.value !== correctAnswers[q]) {
-                        label.classList.add('wrong-ans'); // ভুল উত্তর লাল
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
+
+        function switchAuthTab(type) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const loginTabBtn = document.getElementById('loginTabBtn');
+            const signupTabBtn = document.getElementById('signupTabBtn');
+
+            if (type === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                loginTabBtn.style.color = 'var(--primary)';
+                signupTabBtn.style.color = 'var(--text-dim)';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                loginTabBtn.style.color = 'var(--text-dim)';
+                signupTabBtn.style.color = 'var(--primary)';
+            }
+        }
+
+        /* Medical Standard Option Selection Logic */
+        function handleOptionSelect(selectedInput) {
+            const qItem = selectedInput.closest('.q-item');
+            const correctAnswer = qItem.getAttribute('data-correct');
+            const selectedValue = selectedInput.value;
+            const labels = qItem.querySelectorAll('.opt-label');
+            const inputs = qItem.querySelectorAll('input[type="radio"]');
+
+            // Lock all inputs in this question so option cannot be changed
+            inputs.forEach(input => {
+                input.disabled = true;
+                input.parentElement.classList.add('disabled');
+            });
+
+            // Check if selected option is correct or wrong
+            if (selectedValue === correctAnswer) {
+                selectedInput.parentElement.classList.add('correct');
+                totalScore += 1.0;
+            } else {
+                selectedInput.parentElement.classList.add('wrong');
+                totalScore -= 0.25;
+
+                // Highlight the correct answer in green
+                inputs.forEach(input => {
+                    if (input.value === correctAnswer) {
+                        input.parentElement.classList.add('correct');
                     }
                 });
-
-                if (selected) {
-                    if (selected.value === correctAnswers[q]) {
-                        score += 1;
-                    } else {
-                        score -= 0.25;
-                    }
-                }
             }
 
-            if (answered === 0) {
-                alert("দয়া করে অন্তত একটি প্রশ্নের উত্তর নির্বাচন করুন!");
-                // Re-enable options
-                document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = false);
-                return;
-            }
+            answeredQuestions++;
 
-            document.getElementById('examResult').style.display = 'block';
-            document.getElementById('scoreText').innerText = `প্রাপ্ত নম্বর: ${score.toFixed(2)} / ${total}`;
+            // Show real-time scorecard
+            const resultBox = document.getElementById('examResult');
+            const scoreText = document.getElementById('scoreText');
+            resultBox.style.display = 'block';
+            scoreText.innerText = `উত্তর দেওয়া হয়েছে: ${answeredQuestions}/${totalQuestions} | বর্তমান প্রাপ্ত নম্বর: ${totalScore.toFixed(2)}`;
         }
 
-        function copyBkash(num) {
-            navigator.clipboard.writeText(num);
-            alert('বিকাশ নম্বরটি কপি হয়েছে!');
-        }
-        function openEnrollModal() { document.getElementById('enrollModal').style.display = 'flex'; }
-        function closeEnrollModal() { document.getElementById('enrollModal').style.display = 'none'; }
-        function openAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
-        function closeAuthModal() { document.getElementById('authModal').style.display = 'none'; }
+        document.getElementById('enrollForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('ধন্যবাদ! তোমার ভর্তির তথ্যসমূহ সফলভাবে গৃহীত হয়েছে।');
+            closeEnrollModal();
+        });
     </script>
+
+    <!-- Firebase SDK Integration -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBHUmpV0rkgXXRWgNYCK5zDu5Kr9WdYntw",
+        authDomain: "mbbs-exam-batch-26-65e94.firebaseapp.com",
+        projectId: "mbbs-exam-batch-26-65e94",
+        storageBucket: "mbbs-exam-batch-26-65e94.firebasestorage.app",
+        messagingSenderId: "285727036890",
+        appId: "1:285727036890:web:3c13ded601633e5d045ce3",
+        measurementId: "G-ZZZ4EXSHLL"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      window.handleAuthSubmit = async function(event, type) {
+        event.preventDefault();
+
+        if (type === 'signup') {
+          const name = document.getElementById('signupName').value;
+          const phone = document.getElementById('signupPhone').value;
+          const reg = document.getElementById('signupReg').value;
+          const pass = document.getElementById('signupPass').value;
+
+          try {
+            await addDoc(collection(db, "users"), {
+              name: name,
+              phone: phone,
+              regNo: reg,
+              password: pass,
+              createdAt: new Date().toISOString()
+            });
+
+            alert('রেজিস্ট্রেশন সফল হয়েছে!');
+            closeAuthModal();
+          } catch (error) {
+            console.error("Error adding document: ", error);
+            alert('রেজিস্ট্রেশনে ত্রুটি হয়েছে, আবার চেষ্টা করুন।');
+          }
+        } else if (type === 'login') {
+          alert('লগইন সিস্টেমের কাজ চলছে...');
+          closeAuthModal();
+        }
+      };
+    </script>
+
 </body>
 </html>
+  
