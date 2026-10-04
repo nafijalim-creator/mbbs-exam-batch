@@ -728,38 +728,6 @@ function handleAuthSubmit(event, type) {
             <button type="submit" class="btn-primary">রেজিস্ট্রেশন</button>
         </form>
     </div>
-</div>
-
-<script>
-function openAuthModal(type) {
-    document.getElementById('authModal').style.display = 'flex';
-    switchAuthTab(type);
-}
-
-function closeAuthModal() {
-    document.getElementById('authModal').style.display = 'none';
-}
-
-function switchAuthTab(type) {
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-    const loginTabBtn = document.getElementById('loginTabBtn');
-    const signupTabBtn = document.getElementById('signupTabBtn');
-
-    if (type === 'login') {
-        loginForm.style.display = 'block';
-        signupForm.style.display = 'none';
-        loginTabBtn.classList.add('active');
-        signupTabBtn.classList.remove('active');
-    } else {
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'block';
-        signupTabBtn.classList.add('active');
-        loginTabBtn.classList.remove('active');
-    }
-}
-</script>
-
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -802,44 +770,11 @@ function switchAuthTab(type) {
         alert('রেজিস্ট্রেশনে ত্রুটি হয়েছে, আবার চেষ্টা করুন।');
       }
     } else if (type === 'login') {
-      alert('লগইন সিস্টেমের কাজ চলছে...');
+      alert('লগইন সিস্টেম সংযোগ করা হচ্ছে...');
       closeAuthModal();
     }
   };
 </script>
 
-</body>
-</html>
-        
-  // Firebase SDKs Import
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-  // তোমার ফায়ারবেস কনফিগারেশন
-  const firebaseConfig = {
-    apiKey: "AIzaSyBHUmpV0rkgXXRWgNYCK5zDu5Kr9WdYntw",
-    authDomain: "mbbs-exam-batch-26-65e94.firebaseapp.com",
-    projectId: "mbbs-exam-batch-26-65e94",
-    storageBucket: "mbbs-exam-batch-26-65e94.firebasestorage.app",
-    messagingSenderId: "285727036890",
-    appId: "1:285727036890:web:3c13ded601633e5d045ce3",
-    measurementId: "G-ZZZ4EXSHLL"
-  };
-
-  // Initialize Firebase & Firestore Database
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // db ভ্যারিয়েবলটি যাতে গ্লোবালি ব্যবহার করতে পারো
-  window.db = db;
-  window.collection = collection;
-  window.addDoc = addDoc;
-  window.getDocs = getDocs;
-
-  // console.log("Firebase & Firestore connected successfully!");
-
-            ("Firebase & Firestore connected successfully!");
-        </script>
-        
 </body>
 </html>
