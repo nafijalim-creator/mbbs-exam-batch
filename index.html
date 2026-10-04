@@ -13,62 +13,202 @@
             --text: #ffffff;
             --text-dim: #8b949e;
             --bkash: #e2136e;
+            --accent: #238636;
             --danger: #da3633;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; }
-        .container { max-width: 600px; width: 100%; padding-bottom: 90px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding-bottom: 90px;
+        }
 
         header {
-            text-align: center; padding: 30px 15px;
+            text-align: center;
+            padding: 30px 15px;
             background: linear-gradient(135deg, #1f2937, #111827);
-            border-radius: 20px; border: 1px solid #374151; margin-bottom: 25px;
+            border-radius: 20px;
+            border: 1px solid #374151;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
         }
-        .badge { background: rgba(0, 230, 118, 0.15); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 14px; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid var(--primary); }
-        h1 { font-size: 24px; font-weight: 700; }
-        .subtitle { color: var(--text-dim); font-size: 14px; margin-top: 8px; }
 
-        .social-proof { background: rgba(226, 19, 110, 0.1); border: 1px dashed var(--bkash); border-radius: 12px; padding: 12px; text-align: center; font-size: 14px; font-weight: 600; margin-bottom: 25px; color: #ff80ab; }
-        .section-title { font-size: 18px; font-weight: 700; margin: 25px 0 15px 0; border-left: 4px solid var(--primary); padding-left: 10px; }
+        .badge {
+            background: rgba(0, 230, 118, 0.15);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid var(--primary);
+        }
 
-        .pdf-card { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #3b82f6; border-radius: 16px; padding: 20px; margin-bottom: 25px; }
-        .btn-pdf { display: inline-block; background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; margin-top: 12px; }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #fff;
+        }
 
-        /* Question Box & Options */
-        .exam-demo-box { background: var(--card-bg); border: 1px solid #30363d; border-radius: 16px; padding: 20px; }
-        .q-item { margin-bottom: 20px; background: #21262d; padding: 15px; border-radius: 12px; border: 1px solid #30363d; }
-        .q-text { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+        p.subtitle {
+            color: var(--text-dim);
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .social-proof {
+            background: rgba(226, 19, 110, 0.1);
+            border: 1px dashed var(--bkash);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #ff80ab;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 15px 0;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        .pdf-card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #3b82f6;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .pdf-title {
+            color: #60a5fa;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .btn-pdf {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 12px;
+        }
+
+        /* Question & Option Style */
+        .exam-demo-box {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .q-item {
+            margin-bottom: 20px;
+            background: #21262d;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+        }
+
+        .q-text {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #fff;
+        }
 
         .opt-label {
-            display: flex; align-items: center; background: #161b22;
-            padding: 12px 14px; border-radius: 8px; margin-bottom: 8px;
-            font-size: 14px; cursor: pointer; border: 1px solid #30363d; transition: 0.2s;
+            display: flex;
+            align-items: center;
+            background: #161b22;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #30363d;
+            transition: background 0.2s, border-color 0.2s;
+            user-select: none;
         }
-        .opt-label input { margin-right: 10px; width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
 
-        /* Answer Status Styles */
-        .opt-label.correct { background: rgba(0, 230, 118, 0.2) !important; border-color: var(--primary) !important; color: var(--primary) !important; font-weight: bold; }
-        .opt-label.wrong { background: rgba(218, 54, 51, 0.2) !important; border-color: var(--danger) !important; color: #ff7675 !important; }
-        .opt-label.disabled { pointer-events: none; opacity: 0.8; }
+        .opt-label input[type="radio"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+            pointer-events: auto; /* সমস্যা ফিক্স করার জন্য */
+        }
 
-        .btn-primary { display: block; width: 100%; background: var(--primary); color: #000; text-align: center; padding: 15px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; margin-top: 20px; cursor: pointer; border: none; }
+        /* Result States */
+        .opt-label.correct-ans {
+            background: rgba(0, 230, 118, 0.2) !important;
+            border: 1px solid var(--primary) !important;
+            color: var(--primary) !important;
+            font-weight: bold;
+        }
 
-        /* Payment Section */
+        .opt-label.wrong-ans {
+            background: rgba(218, 54, 51, 0.2) !important;
+            border: 1px solid var(--danger) !important;
+            color: #ff7675 !important;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            text-align: center;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
+        }
+
+        /* Payment Box & Modals */
         .payment-box { background: var(--card-bg); border: 1px solid #30363d; border-radius: 16px; padding: 20px; text-align: center; }
-        .bkash-card { background: linear-gradient(135deg, #e2136e, #a00b4c); border-radius: 14px; padding: 18px; color: #fff; margin-top: 15px; }
-        .bkash-number { font-size: 20px; font-weight: 700; background: rgba(0, 0, 0, 0.25); padding: 8px 12px; border-radius: 8px; margin: 10px 0; display: inline-block; border: 1px dashed #fff; cursor: pointer; }
-
-        /* WhatsApp Button */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; border-radius: 50px; padding: 12px 20px; font-size: 14px; font-weight: 700; text-decoration: none; z-index: 100; }
-
-        /* Modal Styles */
+        .bkash-card { background: linear-gradient(135deg, #e2136e, #a00b4c); border-radius: 14px; padding: 20px; color: #fff; margin-top: 15px; }
+        .bkash-number { font-size: 22px; font-weight: 700; background: rgba(0,0,0,0.25); padding: 10px; border-radius: 10px; margin: 10px 0; cursor: pointer; border: 1px dashed #fff; display: inline-block; }
+        
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; border-radius: 50px; padding: 12px 20px; font-size: 14px; font-weight: 700; text-decoration: none; z-index: 100; }
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
         .modal-content { background: var(--card-bg); border: 1px solid #30363d; border-radius: 20px; padding: 25px; width: 100%; max-width: 450px; position: relative; }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: var(--text-dim); }
-        .form-group { margin-top: 12px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; margin-bottom: 5px; color: var(--text-dim); }
-        .form-group input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #fff; }
+        .form-group { margin-top: 15px; text-align: left; }
+        .form-group label { display: block; font-size: 13px; margin-bottom: 6px; color: var(--text-dim); }
+        .form-group input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: #fff; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -85,37 +225,47 @@
         </div>
 
         <div class="pdf-card">
-            <div style="color: #60a5fa; font-weight: 700; font-size: 15px;">📚 ফ্রি স্পেশাল স্টাডি মেটেরিয়ালস (PDF)</div>
-            <p style="font-size: 13px; color: #cbd5e1; margin-top: 5px;">এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করো!</p>
+            <div class="pdf-title">📚 ফ্রি স্পেশাল স্টাডি মেটেরিয়ালস (PDF)</div>
+            <p style="font-size: 13px; color: #cbd5e1;">এক্সক্লুসিভ প্র্যাকটিস ফাইল ও নোট ফ্রিতে ডাউনলোড করে নাও!</p>
             <a href="https://t.me/" target="_blank" class="btn-pdf">📥 ডাউনলোড ফ্রি মেটেরিয়ালস</a>
         </div>
 
-        <!-- DEMO EXAM SECTION -->
+        <!-- DEMO MEDICAL EXAM SYSTEM -->
         <h2 class="section-title">🧪 মডেল টেস্ট এক্সপেরিয়েন্স (লাইভ ডেমো)</h2>
         <div class="exam-demo-box">
-            
-            <!-- Question 1 -->
-            <div class="q-item" data-correct="B">
-                <div class="q-text">১. মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</div>
-                <label class="opt-label"><input type="radio" name="q1" value="A"> ক) যকৃৎ (Liver)</label>
-                <label class="opt-label"><input type="radio" name="q1" value="B"> খ) প্লীহা (Spleen)</label>
-                <label class="opt-label"><input type="radio" name="q1" value="C"> গ) অগ্ন্যাশয় (Pancreas)</label>
-                <label class="opt-label"><input type="radio" name="q1" value="D"> ঘ) থাইমাস (Thymus)</label>
-            </div>
+            <form id="demoExamForm">
+                <!-- Question 1 -->
+                <div class="q-item">
+                    <div class="q-text">১. মানবদেহের সবচেয়ে বড় লসিকাগোষ্ঠী বা লসিকা অঙ্গ কোনটি?</div>
+                    <label class="opt-label"><input type="radio" name="q1" value="A"> ক) যকৃৎ (Liver)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="B"> খ) প্লীহা (Spleen)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="C"> গ) অগ্ন্যাশয় (Pancreas)</label>
+                    <label class="opt-label"><input type="radio" name="q1" value="D"> ঘ) থাইমাস (Thymus)</label>
+                </div>
 
-            <!-- Question 2 -->
-            <div class="q-item" data-correct="C">
-                <div class="q-text">২. রক্ত জমাট বাঁধতে সাহায্য করে কোন রক্তকণিকা?</div>
-                <label class="opt-label"><input type="radio" name="q2" value="A"> ক) লোহিত রক্তকণিকা</label>
-                <label class="opt-label"><input type="radio" name="q2" value="B"> খ) শ্বেত রক্তকণিকা</label>
-                <label class="opt-label"><input type="radio" name="q2" value="C"> গ) অনুচক্রিকা (Platelet)</label>
-                <label class="opt-label"><input type="radio" name="q2" value="D"> ঘ) প্লাজমা</label>
-            </div>
+                <!-- Question 2 -->
+                <div class="q-item">
+                    <div class="q-text">২. রক্ত জমাট বাঁধতে সাহায্য করে কোন রক্তকণিকা?</div>
+                    <label class="opt-label"><input type="radio" name="q2" value="A"> ক) লোহিত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="B"> খ) শ্বেত রক্তকণিকা</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="C"> গ) অনুচক্রিকা (Platelet)</label>
+                    <label class="opt-label"><input type="radio" name="q2" value="D"> ঘ) প্লাজমা</label>
+                </div>
 
-            <div id="examResult" style="display: none; padding: 15px; background: #161b22; border-radius: 10px; border: 1px solid var(--primary); text-align: center;">
-                <h3 style="color: var(--primary); font-size: 16px;">পরীক্ষা সম্পন্ন হয়েছে!</h3>
+                <button type="button" class="btn-primary" style="font-size: 16px;" onclick="calculateResult()">পরীক্ষার রেজাল্ট দেখো 📊</button>
+            </form>
+
+            <div id="examResult" style="display: none; margin-top: 20px; padding: 15px; background: #161b22; border-radius: 10px; border: 1px solid var(--primary);">
+                <h3 style="color: var(--primary); font-size: 16px;">স্কোরকার্ড:</h3>
                 <p id="scoreText" style="font-size: 16px; margin-top: 5px; font-weight: 700;"></p>
+                <p style="font-size: 12px; color: var(--text-dim); margin-top: 5px;">*প্রতিটি ভুল উত্তরের জন্য ০.২৫ মার্ক কাটা হয়েছে।</p>
             </div>
+        </div>
+
+        <div style="text-align: center; margin: 25px 0;">
+            <a href="demo_exam.html" class="btn-primary" style="background: #00e676; color: #000; display: block; text-decoration: none;">
+                🧪 ডেমো এক্সাম শুরু করো (100 MCQs) ➔
+            </a>
         </div>
 
         <!-- Payment Section -->
@@ -124,163 +274,107 @@
             <p>কোর্স ফি: <strong style="color: var(--primary); font-size: 22px;">৳৪৯৯</strong> <span style="text-decoration: line-through; color: var(--text-dim); font-size: 14px;">(৳৯৯৯)</span></p>
             <div class="bkash-card">
                 <p style="font-size: 14px; font-weight: 600;">bKash Personal (Send Money):</p>
-                <div class="bkash-number" onclick="copyBkash('01712949003')">01712949003 📋</div>
-                <p style="font-size: 11px; opacity: 0.9;">ট্যাপ করে নম্বর কপি করুন</p>
+                <div class="bkash-number" onclick="copyBkash('01712949003')">
+                    01712949003
+                    <span style="font-size: 11px; opacity: 0.9; display: block;">(কপি করতে ট্যাপ করো 📋)</span>
+                </div>
             </div>
         </div>
 
         <button class="btn-primary" onclick="openEnrollModal()">এখনই এনরোল সম্পন্ন করো 🚀</button>
 
-        <div style="text-align: center; margin-top: 15px;">
-            <button class="btn-primary" style="background: #2563eb; width: 48%; display: inline-block; margin-right: 2%;" onclick="openAuthModal('login')">🔐 লগইন</button>
-            <button class="btn-primary" style="background: #059669; width: 48%; display: inline-block;" onclick="openAuthModal('signup')">📝 রেজিস্ট্রেশন</button>
+        <div style="text-align: center; margin-top: 20px; display: flex; gap: 10px;">
+            <button class="btn-primary" style="background: #2563eb; color: #fff; margin-top: 0;" onclick="openAuthModal('login')">🔐 লগইন</button>
+            <button class="btn-primary" style="background: #059669; color: #fff; margin-top: 0;" onclick="openAuthModal('signup')">📝 রেজিস্ট্রেশন</button>
         </div>
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/8801846187619" class="whatsapp-float" target="_blank">💬 হেল্পলাইন (WhatsApp)</a>
+    <a href="https://wa.me/8801846187619" class="whatsapp-float" target="_blank">💬 হেল্পলাইন</a>
 
-    <!-- Modal Form -->
+    <!-- Modals -->
     <div class="modal" id="enrollModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeEnrollModal()">&times;</span>
             <h3 style="margin-bottom: 15px; color: var(--primary); text-align: center;">ভর্তি ফরম</h3>
             <form id="enrollForm">
                 <div class="form-group"><label>নাম</label><input type="text" required></div>
-                <div class="form-group"><label>মোবাইল নম্বর</label><input type="tel" required></div>
-                <div class="form-group"><label>বিকাশ নম্বর</label><input type="tel" required></div>
-                <div class="form-group"><label>Transaction ID (TrxID)</label><input type="text" required></div>
-                <button type="submit" class="btn-primary" style="margin-top: 15px;">সাবমিট ➔</button>
+                <div class="form-group"><label>মোবাইল</label><input type="tel" required></div>
+                <div class="form-group"><label>TrxID</label><input type="text" required></div>
+                <button type="submit" class="btn-primary">সাবমিট ➔</button>
             </form>
         </div>
     </div>
 
-    <!-- Auth Modal -->
     <div id="authModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeAuthModal()">&times;</span>
-            <div style="display: flex; margin-bottom: 15px; border-bottom: 1px solid #30363d;">
-                <button id="loginTabBtn" onclick="switchAuthTab('login')" style="flex: 1; padding: 10px; background: none; border: none; color: var(--primary); font-weight: bold; cursor: pointer;">লগইন</button>
-                <button id="signupTabBtn" onclick="switchAuthTab('signup')" style="flex: 1; padding: 10px; background: none; border: none; color: var(--text-dim); font-weight: bold; cursor: pointer;">রেজিস্ট্রেশন</button>
-            </div>
-            <form id="loginForm">
-                <div class="form-group"><label>মোবাইল নম্বর</label><input type="tel" required></div>
-                <div class="form-group"><label>পাসওয়ার্ড</label><input type="password" required></div>
-                <button type="submit" class="btn-primary">প্রবেশ করুন</button>
-            </form>
-            <form id="signupForm" style="display: none;">
-                <div class="form-group"><label>নাম</label><input type="text" id="signupName" required></div>
-                <div class="form-group"><label>মোবাইল নম্বর</label><input type="tel" id="signupPhone" required></div>
-                <div class="form-group"><label>এইচএসসি রেজিস্ট্রেশন</label><input type="text" id="signupReg" required></div>
-                <div class="form-group"><label>পাসওয়ার্ড</label><input type="password" id="signupPass" required></div>
-                <button type="submit" class="btn-primary">রেজিস্ট্রেশন করুন</button>
-            </form>
+            <h3 style="text-align: center; color: var(--primary); margin-bottom: 15px;">অ্যাকাউন্ট</h3>
+            <p style="text-align: center; color: var(--text-dim);">লগইন/রেজিস্ট্রেশন ফরম</p>
         </div>
     </div>
 
     <script>
-        let totalAnswered = 0;
-        let score = 0;
+        // Answer Key for Landing Page Demo
+        const correctAnswers = {
+            q1: "B", // প্লীহা (Spleen)
+            q2: "C"  // অনুচক্রিকা
+        };
 
-        // Instant Answer Checking & Option Lock System
-        document.querySelectorAll('.q-item').forEach(qItem => {
-            const correctAnswer = qItem.getAttribute('data-correct');
-            const inputs = qItem.querySelectorAll('input[type="radio"]');
+        function calculateResult() {
+            let score = 0;
+            let total = 2;
+            let answered = 0;
 
-            inputs.forEach(input => {
-                input.addEventListener('change', function() {
-                    // Disable all options in this question so user cannot change answer
-                    inputs.forEach(i => {
-                        i.disabled = true;
-                        i.parentElement.classList.add('disabled');
-                    });
+            for (let q in correctAnswers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                const allOptions = document.querySelectorAll(`input[name="${q}"]`);
 
-                    // Check selected answer vs correct answer
-                    if (this.value === correctAnswer) {
-                        this.parentElement.classList.add('correct');
-                        score += 1;
-                    } else {
-                        this.parentElement.classList.add('wrong');
-                        score -= 0.25;
-                        // Highlight the right option in green
-                        inputs.forEach(i => {
-                            if (i.value === correctAnswer) {
-                                i.parentElement.classList.add('correct');
-                            }
-                        });
-                    }
+                if (selected) {
+                    answered++;
+                }
 
-                    totalAnswered++;
+                allOptions.forEach(opt => {
+                    const label = opt.parentElement;
+                    // Disable changing option after submitted
+                    opt.disabled = true;
 
-                    // Show scorecard after answering all questions
-                    if (totalAnswered === document.querySelectorAll('.q-item').length) {
-                        document.getElementById('examResult').style.display = 'block';
-                        document.getElementById('scoreText').innerText = `প্রাপ্ত নম্বর: ${score} / ${totalAnswered}.০০`;
+                    if (opt.value === correctAnswers[q]) {
+                        label.classList.add('correct-ans'); // সঠিক উত্তর সবুজ
+                    } 
+                    if (selected && opt.checked && opt.value !== correctAnswers[q]) {
+                        label.classList.add('wrong-ans'); // ভুল উত্তর লাল
                     }
                 });
-            });
-        });
 
-        function copyBkash(number) {
-            navigator.clipboard.writeText(number);
-            alert('বিকাশ নম্বরটি কপি হয়েছে: ' + number);
+                if (selected) {
+                    if (selected.value === correctAnswers[q]) {
+                        score += 1;
+                    } else {
+                        score -= 0.25;
+                    }
+                }
+            }
+
+            if (answered === 0) {
+                alert("দয়া করে অন্তত একটি প্রশ্নের উত্তর নির্বাচন করুন!");
+                // Re-enable options
+                document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = false);
+                return;
+            }
+
+            document.getElementById('examResult').style.display = 'block';
+            document.getElementById('scoreText').innerText = `প্রাপ্ত নম্বর: ${score.toFixed(2)} / ${total}`;
         }
 
+        function copyBkash(num) {
+            navigator.clipboard.writeText(num);
+            alert('বিকাশ নম্বরটি কপি হয়েছে!');
+        }
         function openEnrollModal() { document.getElementById('enrollModal').style.display = 'flex'; }
         function closeEnrollModal() { document.getElementById('enrollModal').style.display = 'none'; }
-        function openAuthModal(type) { document.getElementById('authModal').style.display = 'flex'; switchAuthTab(type); }
+        function openAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
         function closeAuthModal() { document.getElementById('authModal').style.display = 'none'; }
-
-        function switchAuthTab(type) {
-            if (type === 'login') {
-                document.getElementById('loginForm').style.display = 'block';
-                document.getElementById('signupForm').style.display = 'none';
-                document.getElementById('loginTabBtn').style.color = 'var(--primary)';
-                document.getElementById('signupTabBtn').style.color = 'var(--text-dim)';
-            } else {
-                document.getElementById('loginForm').style.display = 'none';
-                document.getElementById('signupForm').style.display = 'block';
-                document.getElementById('loginTabBtn').style.color = 'var(--text-dim)';
-                document.getElementById('signupTabBtn').style.color = 'var(--primary)';
-            }
-        }
     </script>
-
-    <!-- Firebase SDK -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBHUmpV0rkgXXRWgNYCK5zDu5Kr9WdYntw",
-        authDomain: "mbbs-exam-batch-26-65e94.firebaseapp.com",
-        projectId: "mbbs-exam-batch-26-65e94",
-        storageBucket: "mbbs-exam-batch-26-65e94.firebasestorage.app",
-        messagingSenderId: "285727036890",
-        appId: "1:285727036890:web:3c13ded601633e5d045ce3",
-        measurementId: "G-ZZZ4EXSHLL"
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      document.getElementById('signupForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        try {
-          await addDoc(collection(db, "users"), {
-            name: document.getElementById('signupName').value,
-            phone: document.getElementById('signupPhone').value,
-            regNo: document.getElementById('signupReg').value,
-            password: document.getElementById('signupPass').value,
-            createdAt: new Date().toISOString()
-          });
-          alert('রেজিস্ট্রেশন সফল হয়েছে!');
-          closeAuthModal();
-        } catch (error) {
-          alert('ত্রুটি হয়েছে, আবার চেষ্টা করুন।');
-        }
-      });
-    </script>
-
 </body>
 </html>
